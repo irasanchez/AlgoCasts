@@ -8,12 +8,33 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  let reversed = "";
-  for (i in str) {
-    reversed = str[i] + reversed;
+  let isPalindrome = true;
+
+  for (let i = 0; i < str.length / 2; i++) {
+    if (str[i] !== str[str.length - i - 1]) {
+      isPalindrome = false;
+    }
   }
-  return reversed === str;
+
+  return isPalindrome;
 }
+
+// SOLUTION 4
+// function palindrome(str) {
+//   // unideal solution because it could be solved by looping just the first half of the array
+//   return str
+//     .split("")
+//     .every((letter, index) => letter === str[str.length - index - 1]);
+// }
+
+//SOLUTION 3
+// function palindrome(str) {
+//   let reversed = "";
+//   for (i in str) {
+//     reversed = str[i] + reversed;
+//   }
+//   return reversed === str;
+// }
 
 //SOLUTION 2
 // function palindrome(str) {
